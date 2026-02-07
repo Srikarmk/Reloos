@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const PRODUCTS = [
+type TrendingProduct = {
+  id: string;
+  name: string;
+  price: number;
+  image: string | null;
+  grayscale: boolean;
+};
+
+const PRODUCTS: TrendingProduct[] = [
   {
     id: "uppababy-vista-v3",
     name: "UPPAbaby VISTA V3",
@@ -34,7 +42,7 @@ const PRODUCTS = [
       "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=600&auto=format&fit=crop",
     grayscale: true,
   },
-] as const;
+];
 
 const CONDITION_BUTTONS = [
   { label: "New", conditionId: "brand-new", className: "bg-blue-500 text-white hover:bg-blue-600" },
