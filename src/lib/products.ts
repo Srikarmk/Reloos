@@ -58,8 +58,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "uppababy-vista-v3",
     name: "UPPAbaby VISTA V3",
-    image:
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=800&auto=format&fit=crop",
+    image: "/header.jpg",
     rating: 4.9,
     reviewCount: 1523,
     colors: [

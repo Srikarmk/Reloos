@@ -15,15 +15,17 @@ const CONDITIONS = [
 export function HeroProduct() {
   return (
     <section className="relative min-h-[70vh] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop"
-          alt=""
-          fill
-          className="object-cover grayscale"
-          priority
-          sizes="100vw"
-        />
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-1/2 h-[100%] w-[120%] -translate-x-1/2 -translate-y-1/2">
+          <Image
+            src="/header.jpg"
+            alt=""
+            fill
+            className="object-cover grayscale object-[center_28%]"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-zinc-900/50" />
       </div>
       <div className="relative flex min-h-[70vh] flex-col justify-end px-4 pb-12 pt-24 md:px-8 md:pb-16">
@@ -41,7 +43,7 @@ export function HeroProduct() {
               href={`/shop/${HERO_PRODUCT_ID}?condition=${conditionId}`}
               className="rounded-lg px-6 py-3 text-base font-semibold transition-all bg-[var(--reloos-yellow)]/90 text-zinc-900 hover:bg-[var(--reloos-yellow)]"
             >
-              {label} — £{price}
+              {label} — ${price}
             </Link>
           ))}
         </div>
