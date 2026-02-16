@@ -55,7 +55,7 @@ export function getProductGalleryImages(productId: string, mainImage: string): s
     case "bugaboo-butterfly-2":
       return [MVP_IMAGES.bugabooButterfly, ...MVP_IMAGES.bugabooGallery];
     case "minu-v3":
-      return MVP_IMAGES.minuGallery;
+      return [...MVP_IMAGES.minuGallery];
     case "snoo-smart-sleeper":
       return [MVP_IMAGES.snoo, MVP_IMAGES.snooHero, MVP_IMAGES.snoo];
     case "cradlewise-convertible":
