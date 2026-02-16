@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
-import { HelpButton } from "@/components/HelpButton";
+import { InspectConditionSection } from "@/components/InspectConditionSection";
 import { ProductDetailPanel } from "@/components/ProductDetailPanel";
-import { ProductGuarantees } from "@/components/ProductGuarantees";
-import { TransparencyGuarantee } from "@/components/TransparencyGuarantee";
+import { ProductImageGallery } from "@/components/ProductImageGallery";
+import { ReloosPromiseSection } from "@/components/ReloosPromiseSection";
+import { getProductGalleryImages } from "@/lib/mvp-images";
 import { getProduct } from "@/lib/products";
 
 type Props = {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Product Not Found" };
   return {
     title: `${product.name} — Reloos`,
-    description: `Buy ${product.name} with guaranteed buyback. Choose your condition and get 30% credit when you return.`,
+    description: `Buy ${product.name} with guaranteed buyback. Choose your condition and get 20-30% back when you return.`,
   };
 }
 
@@ -40,46 +41,36 @@ export default async function ProductPage({ params, searchParams }: Props) {
       ? conditionFromUrl
       : undefined;
 
+  const images = getProductGalleryImages(product.id, product.image);
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Product layout: image left, info right */}
         <section className="border-b border-zinc-200 px-4 py-8 md:px-8 md:py-12">
-          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-100">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover grayscale"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+          <div className="mx-auto max-w-6xl">
+            <Link
+              href="/"
+              className="mb-8 inline-block text-sm font-medium text-zinc-500 hover:text-[var(--reloos-secondary-black)]"
+            >
+              &larr; Back to collections
+            </Link>
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+              <ProductImageGallery images={images} productName={product.name} />
+              <div className="lg:py-2">
+                <ProductDetailPanel
+                  product={product}
+                  initialConditionId={validConditionId}
+                  category="STROLLERS"
                 />
               </div>
-              <div className="flex gap-2">
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 border-[var(--reloos-yellow)] bg-zinc-100">
-                  <Image
-                    src={product.image}
-                    alt=""
-                    fill
-                    className="object-cover grayscale"
-                    sizes="5rem"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="lg:py-2">
-              <ProductDetailPanel product={product} initialConditionId={validConditionId} />
             </div>
           </div>
         </section>
 
-        <ProductGuarantees />
-        <TransparencyGuarantee />
+        <InspectConditionSection product={product} />
+        <ReloosPromiseSection />
       </main>
-      <HelpButton />
     </>
   );
 }

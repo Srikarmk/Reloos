@@ -13,7 +13,7 @@ export function ProductGuarantees() {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
-      bgClass: "bg-indigo-600",
+      bgClass: "bg-sky-500",
     },
     {
       title: "Professionally Disinfected",
@@ -34,7 +34,7 @@ export function ProductGuarantees() {
           />
         </svg>
       ),
-      bgClass: "bg-emerald-500",
+      bgClass: "bg-[var(--reloos-secondary)]",
     },
     {
       title: "Warranty Included",
@@ -49,7 +49,7 @@ export function ProductGuarantees() {
           <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      bgClass: "bg-blue-600",
+      bgClass: "bg-emerald-500",
     },
   ];
 

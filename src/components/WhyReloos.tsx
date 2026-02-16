@@ -1,58 +1,64 @@
 export function WhyReloos() {
   const cards = [
     {
-      title: "Safety First",
+      title: "SAFETY SPECIALIST",
+      titleLine2: "INSPECTED",
       description:
-        "Every item is professionally inspected and certified to meet the highest safety standards",
-      bgClass: "bg-[var(--reloos-safety-bg)]",
+        "Recalls checked and structural integrity verified for your peace of mind.",
       icon: (
         <svg
-          className="h-10 w-10 text-[var(--reloos-safety-icon)]"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Guaranteed Buyback",
-      description:
-        "We buy back your gear when you're done — reducing your cost and environmental impact",
-      bgClass: "bg-[var(--reloos-buyback-bg)]",
-      icon: (
-        <svg
-          className="h-10 w-10 text-[var(--reloos-buyback-icon)]"
+          className="h-12 w-12 text-sky-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth={1.5}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            d="M9 12.75L11.25 15 15 9.5m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
           />
         </svg>
       ),
     },
     {
-      title: "Free Pickup",
+      title: "MEDICAL-GRADE",
+      titleLine2: "DISINFECTION",
       description:
-        "Complimentary white-glove pickup and delivery service for all trade-ins and purchases",
-      bgClass: "bg-[var(--reloos-pickup-bg)]",
+        "Sanitized using our proprietary high-heat process to ensure every item is like-new.",
       icon: (
         <svg
-          className="h-10 w-10 text-[var(--reloos-pickup-icon)]"
+          className="h-12 w-12 text-[var(--reloos-secondary)]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth={1.5}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1h9M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "TOTAL PROTECTION",
+      titleLine2: "",
+      description:
+        "A full 1-Year Warranty is standard on both new and refurbished equipment.",
+      icon: (
+        <svg
+          className="h-12 w-12 text-emerald-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
           />
         </svg>
       ),
@@ -60,27 +66,27 @@ export function WhyReloos() {
   ];
 
   return (
-    <section className="bg-white px-4 py-16 md:px-8 md:py-20">
+    <section className="bg-[#F7F7F7] px-4 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-          Why Parents Love Reloos
-        </h2>
-        <p className="mt-2 text-center text-zinc-500">
-          Making parenting more affordable and sustainable
-        </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {cards.map((card) => (
             <div
               key={card.title}
-              className={`flex flex-col items-center rounded-2xl p-8 shadow-sm ${card.bgClass}`}
+              className="rounded-2xl bg-white p-8 shadow-sm"
             >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center">
+              <div className="mb-6 flex justify-center">
                 {card.icon}
               </div>
-              <h3 className="text-center text-lg font-bold text-zinc-900">
+              <h3 className="text-center text-xl font-bold italic tracking-tight text-[var(--reloos-secondary-black)] md:text-2xl">
                 {card.title}
+                {card.titleLine2 && (
+                  <>
+                    <br />
+                    {card.titleLine2}
+                  </>
+                )}
               </h3>
-              <p className="mt-2 text-center text-sm text-zinc-600">
+              <p className="mt-4 text-center text-sm text-zinc-600">
                 {card.description}
               </p>
             </div>

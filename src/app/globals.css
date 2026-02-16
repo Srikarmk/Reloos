@@ -2,25 +2,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  /* Reloos brand */
-  --reloos-yellow: #facc15;
-  --reloos-yellow-light: #fef08a;
-  --reloos-navy: #1e3a5f;
+  --foreground: #1A1A1A;
+  /* Reloos primary palette */
+  --reloos-primary: #FFF8E0;
+  --reloos-secondary: #DC77FF;
+  --reloos-secondary-black: #1A1A1A;
+  /* Legacy aliases for components */
+  --reloos-yellow: #FFF8E0;
+  --reloos-yellow-light: #FFFCE8;
+  --reloos-navy: #1A1A1A;
   --reloos-safety-bg: #e0e7ff;
   --reloos-safety-icon: #4f46e5;
-  --reloos-buyback-bg: #dcfce7;
-  --reloos-buyback-icon: #16a34a;
-  --reloos-pickup-bg: #fae8ff;
-  --reloos-pickup-icon: #9333ea;
+  --reloos-buyback-bg: #f3e8ff;
+  --reloos-buyback-icon: #DC77FF;
+  --reloos-pickup-bg: #dcfce7;
+  --reloos-pickup-icon: #16a34a;
   --tag-new: #dbeafe;
   --tag-like-new: #dcfce7;
-  --tag-good: #fef9c3;
+  --tag-good: #FFF8E0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-reloos-primary: var(--reloos-primary);
+  --color-reloos-secondary: var(--reloos-secondary);
+  --color-reloos-secondary-black: var(--reloos-secondary-black);
   --color-reloos-yellow: var(--reloos-yellow);
   --color-reloos-yellow-light: var(--reloos-yellow-light);
   --color-reloos-navy: var(--reloos-navy);
@@ -39,4 +46,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+.animate-orbit-delayed {
+  animation: orbit 8s linear infinite;
+  animation-delay: -8s;
+}
+
+.animate-orbit-slow {
+  animation: orbit 22s linear infinite;
+}
+
+.animate-orbit-slow-delayed {
+  animation: orbit 22s linear infinite;
+  animation-delay: -11s;
+}
+
+/* Collection card: blend PNG white into card background so no white box shows */
+.collection-card-img {
+  mix-blend-mode: multiply;
 }

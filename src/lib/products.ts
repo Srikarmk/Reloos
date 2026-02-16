@@ -1,3 +1,5 @@
+import { MVP_IMAGES } from "./mvp-images";
+
 export type ConditionTier = {
   id: string;
   label: string;
@@ -58,7 +60,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "uppababy-vista-v3",
     name: "UPPAbaby VISTA V3",
-    image: "/header.jpg",
+    image: MVP_IMAGES.vistaHero,
     rating: 4.9,
     reviewCount: 1523,
     colors: [
@@ -71,8 +73,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "snoo-smart-sleeper",
     name: "SNOO Smart Sleeper",
-    image:
-      "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop",
+    image: MVP_IMAGES.snoo,
     rating: 4.8,
     reviewCount: 892,
     colors: [
@@ -119,6 +120,57 @@ export const PRODUCTS: Product[] = [
       { id: "like-new", label: "Like New", price: 399, description: "Certified Excellent. Minimal signs of use.", bestValue: true },
       { id: "good", label: "Good Condition", price: 349, description: "Fully functional. Some visible wear. All safety tests passed." },
       { id: "fair", label: "Fair Condition", price: 279, description: "Noticeable wear. Fully functional. Passes all safety tests.", showHelp: true },
+    ],
+  },
+  {
+    id: "bugaboo-butterfly-2",
+    name: "Bugaboo Butterfly 2 travel stroller",
+    image: MVP_IMAGES.bugabooButterfly,
+    rating: 4.8,
+    reviewCount: 612,
+    colors: [
+      { name: "Black", hex: "#171717" },
+      { name: "Gray", hex: "#6b7280" },
+    ],
+    conditions: [
+      { id: "brand-new", label: "Brand New", price: 349, description: "Factory sealed. Full manufacturer warranty." },
+      { id: "like-new", label: "Like New", price: 279, description: "Certified Excellent. Minimal signs of use.", bestValue: true },
+      { id: "good", label: "Good Condition", price: 229, description: "Fully functional. Some visible wear. All safety tests passed." },
+      { id: "fair", label: "Fair Condition", price: 249, description: "Noticeable wear. Fully functional. Passes all safety tests.", showHelp: true },
+    ],
+  },
+  {
+    id: "minu-v3",
+    name: "Minu® V3",
+    image: MVP_IMAGES.minuV3,
+    rating: 4.9,
+    reviewCount: 445,
+    colors: [
+      { name: "Black", hex: "#171717" },
+      { name: "Silver", hex: "#9ca3af" },
+    ],
+    conditions: [
+      { id: "brand-new", label: "Brand New", price: 349, description: "Factory sealed. Full manufacturer warranty." },
+      { id: "like-new", label: "Like New", price: 279, description: "Certified Excellent. Minimal signs of use.", bestValue: true },
+      { id: "good", label: "Good Condition", price: 229, description: "Fully functional. Some visible wear. All safety tests passed." },
+      { id: "fair", label: "Fair Condition", price: 249, description: "Noticeable wear. Fully functional. Passes all safety tests.", showHelp: true },
+    ],
+  },
+  {
+    id: "cradlewise-convertible",
+    name: "Cradlewise Convertible Smart Bassinet and Crib",
+    image: MVP_IMAGES.cradlewise,
+    rating: 4.8,
+    reviewCount: 334,
+    colors: [
+      { name: "Natural", hex: "#d4c4a8" },
+      { name: "Gray", hex: "#6b7280" },
+    ],
+    conditions: [
+      { id: "brand-new", label: "Brand New", price: 899, description: "Factory sealed. Full manufacturer warranty." },
+      { id: "like-new", label: "Like New", price: 799, description: "Certified Excellent. Minimal signs of use.", bestValue: true },
+      { id: "good", label: "Good Condition", price: 699, description: "Fully functional. Some visible wear. All safety tests passed." },
+      { id: "fair", label: "Fair Condition", price: 599, description: "Noticeable wear. Fully functional. Passes all safety tests.", showHelp: true },
     ],
   },
 ];
